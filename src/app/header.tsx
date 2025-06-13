@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Head from 'next/head';
 
 const Header = () => {
   const pathname = usePathname();
@@ -18,6 +19,9 @@ const Header = () => {
 
   return (
     <>
+      <Head>
+        <meta name="dicoding:email" content="sintanastalia21@gmail.com" />
+      </Head>
       <header className="header-shape bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 md:px-10 h-32 relative mb-6 z-30">
         <div className="container mx-auto flex items-center justify-between h-full">
           {/* Logo Section */}
