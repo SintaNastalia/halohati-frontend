@@ -5,7 +5,6 @@ import Header from "./header";
 import Link from 'next/link'; // Import Link for navigation
 // Import the useInView hook
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react'; // Import useEffect
 
 export default function BerandaPage() {
 
@@ -152,7 +151,7 @@ export default function BerandaPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="step-card bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-500">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-600 font-bold text-xl">1</div>
-                <h3 className="text-xl font-semibold mb-3">Klik Menu "Chat"</h3>
+                <h3 className="text-xl font-semibold mb-3">Klik Menu (Chat) </h3>
                 <p className="text-gray-600 mb-4">
                   Dengan sekali klik langsung dapat ngobrol bareng HaloHati. Semua data Anda dijamin kerahasiaannya^^.
                 </p>
@@ -177,10 +176,10 @@ export default function BerandaPage() {
                 <div className="bg-gray-100 p-4 rounded-lg">
                   <div className="flex flex-col space-y-2">
                     <div className="self-start bg-gray-200 px-3 py-2 rounded-lg max-w-xs">
-                      <p className="text-sm">Halo, saya merasa cemas akhir-akhir ini</p>
+                    <p className="text-sm">&quot;Halo, saya merasa cemas akhir-akhir ini&quot;</p>
                     </div>
                     <div className="self-end bg-indigo-100 px-3 py-2 rounded-lg max-w-xs">
-                      <p className="text-sm">Saya mengerti perasaan Anda. Mari kita bicarakan lebih lanjut...</p>
+                    <p className="text-sm">&quot;Saya mengerti perasaan Anda. Mari kita bicarakan lebih lanjut...&quot;</p>
                     </div>
                   </div>
                 </div>
@@ -236,7 +235,7 @@ export default function BerandaPage() {
               
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Mulai Perjalanan Kesehatan Mental Anda</h2>
               <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed">
-                "Setiap langkah kecil menuju kesehatan mental yang lebih baik adalah pencapaian besar. Bersama HaloHati, Anda tidak sendirian dalam perjalanan ini."
+                &quot;Setiap langkah kecil menuju kesehatan mental yang lebih baik adalah pencapaian besar. Bersama HaloHati, Anda tidak sendirian dalam perjalanan ini.&quot;
               </p>
 
               {/* Use Link component for navigation */}

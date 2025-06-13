@@ -21,7 +21,6 @@ const ChatPage = () => {
     { text: "Halo! Aku HaloHati, teman curhatmu. Bagaimana perasaanmu hari ini? Ceritakan apa yang sedang kamu rasakan.", sender: 'bot' }
   ]);
   const [inputMessage, setInputMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
 
   // Define the list of themes/background options
@@ -84,46 +83,7 @@ const ChatPage = () => {
     };
   }, [showPageThemePopup, themePopupRef]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const message = inputMessage.trim();
-
-    if (!message) return;
-
-    // Add user message
-    setMessages(prevMessages => [...prevMessages, { text: message, sender: 'user' }]);
-    setInputMessage(''); // Clear input
-
-    // Show typing indicator
-    setIsTyping(true);
-
-    try {
-      // Call API (replace with your actual Azure Functions URL if different)
-      const apiUrl = 'https://halohati-func.azurewebsites.net/api/chatgpt'; // Pastikan URL ini benar
-      const response: Response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message }), // Mengirim pesan sebagai JSON
-      });
-
-      if (!response.ok) {
-        throw new Error('Gagal mendapatkan balasan dari server.');
-      }
-
-      const reply = await response.text(); // Backend returns text
-
-      // Remove typing indicator and add bot response
-      setIsTyping(false);
-      setMessages(prevMessages => [...prevMessages, { text: reply, sender: 'bot' }]);
-
-    } catch (error) {
-      console.error('Error:', error);
-      setIsTyping(false);
-      setMessages(prevMessages => [...prevMessages, { text: 'Maaf, terjadi kesalahan saat menghubungi server. Silakan coba lagi nanti.', sender: 'bot' }]);
-    }
-  };
+  
    // Corrected handleSubmit to send JSON body
    const handleSubmitCorrected = async (e: React.FormEvent) => {
      e.preventDefault();
