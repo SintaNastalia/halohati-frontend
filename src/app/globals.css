@@ -123,11 +123,7 @@ body {
   background-color: #cbd5e1;
   border-radius: 20px;
 }
-.chat-background {
-  /* Ganti dengan gaya latar belakang yang sesuai dari currentPageBg */
-  background-color: #f0f0f0ad; /* Contoh: ganti dengan warna atau gambar latar yang Anda gunakan */
-  /* Atau background-image, background-size, dll. */
-}
+
 .input-shadow {
   box-shadow: 0 -5px 2px 0 rgba(0, 0, 0, 0.05);
 }

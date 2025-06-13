@@ -134,7 +134,7 @@ const ChatPage = () => {
 
   return (
     // Main container for the whole page. Apply page background using inline style.
-    <main className="min-h-screen text-gray-900 chat-background"> {/* Apply selected background style directly */}
+    <main className="min-h-screen text-gray-900" style={currentPageBg}> {/* Apply selected background style directly */}
       {/* Header Component */}
       <Header /> {/* Header might still have dark mode classes, adjust header.tsx if needed */}
 
@@ -259,9 +259,10 @@ const ChatPage = () => {
                   disabled={inputMessage.trim() === '' || isTyping}
                   aria-label="Kirim pesan" // Added aria-label for accessibility
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                  </svg>
+                 {/* Paint Brush Icon */}
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.53 16.122l-3.995-1.997A.75.75 0 014 14.25v-2.48m14.25 2.48l-3.995 1.997A.75.75 0 0118 14.25v-2.48m-4.5 0l-3.995-1.997A.75.75 0 009 9.75v-.995c0-.592.535-.967 1.085-.75l3.996 1.997A.75.75 0 0115 11.25v.995c0 .592-.535.967-1.085.75zM9.75 9.75l3.995 1.997M14.25 12l-3.995 1.997M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 </button>
               </form>
             </div>
