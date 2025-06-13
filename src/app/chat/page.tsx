@@ -134,7 +134,7 @@ const ChatPage = () => {
 
   return (
     // Main container for the whole page. Apply page background using inline style.
-    <main className="min-h-screen text-gray-900" style={currentPageBg}> {/* Apply selected background style directly */}
+    <main className="min-h-screen text-gray-900 chat-background"> {/* Apply selected background style directly */}
       {/* Header Component */}
       <Header /> {/* Header might still have dark mode classes, adjust header.tsx if needed */}
 
@@ -235,7 +235,7 @@ const ChatPage = () => {
             </div>
 
             {/* Message Input Area - Removed dark mode styles */}
-            <div className="p-4 flex-shrink-0" style={{ boxShadow: '0 -5px 2px 0 rgba(0, 0, 0, 0.05)' }}>
+            <div className="p-4 flex-shrink-0 input-shadow"> {/* Apply box-shadow using CSS class */}
               <form onSubmit={handleSubmitCorrected} className="flex flex-row items-center space-x-2">
                 {/* Textarea Container */}
                 <div className="flex-grow">
@@ -294,7 +294,9 @@ const ChatPage = () => {
                 {themes.map((themeOption, index) => (
                   <button
                     key={index}
+                    type="button" // <-- Tambahkan atribut type="button" di sini
                     className="w-full h-16 rounded-md border-2 border-transparent hover:border-blue-500 focus:outline-none focus:border-blue-500 overflow-hidden relative group"
+                    // eslint-disable-next-line react/no-inline-styles
                     style={themeOption.style}
                     onClick={() => {
                       setCurrentPageBg(themeOption.style);
