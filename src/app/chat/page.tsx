@@ -284,9 +284,9 @@ const ChatPage = () => {
                   className="text-gray-500 hover:text-gray-700 focus:outline-none"
                   aria-label="Kirim pesan" // Added aria-label for accessibility
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.53 16.122l-3.995-1.997A.75.75 0 014 14.25v-2.48m14.25 2.48l-3.995 1.997A.75.75 0 0118 14.25v-2.48m-4.5 0l-3.995-1.997A.75.75 0 009 9.75v-.995c0-.592.535-.967 1.085-.75l3.996 1.997A.75.75 0 0115 11.25v.995c0 .592-.535.967-1.085.75zM9.75 9.75l3.995 1.997M14.25 12l-3.995 1.997M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 </button>
               </div>
 
@@ -294,7 +294,6 @@ const ChatPage = () => {
                 {themes.map((themeOption, index) => (
                   <button
                     key={index}
-                    type="button" // <-- Tambahkan atribut type="button" di sini
                     className="w-full h-16 rounded-md border-2 border-transparent hover:border-blue-500 focus:outline-none focus:border-blue-500 overflow-hidden relative group"
                     // eslint-disable-next-line react/no-inline-styles
                     style={themeOption.style}
